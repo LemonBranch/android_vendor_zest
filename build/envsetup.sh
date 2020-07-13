@@ -44,7 +44,7 @@ function breakfast()
                 variant="userdebug"
             fi
 
-            lunch pa_$target-$variant
+            lunch zest_$target-$variant
         fi
     fi
     return $?
@@ -215,5 +215,5 @@ function repolastsync() {
 function repopick()
 {
     T=$(gettop)
-    $T/vendor/pa/build/tools/repopick.py $@
+    $T/vendor/zest/build/tools/repopick.py $@
 }

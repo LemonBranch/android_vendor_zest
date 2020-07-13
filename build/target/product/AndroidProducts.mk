@@ -15,7 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/pa_arm.mk \
-    $(LOCAL_DIR)/pa_arm64.mk \
-    $(LOCAL_DIR)/pa_x86.mk \
-    $(LOCAL_DIR)/pa_x86_64.mk
+    $(LOCAL_DIR)/zest_arm.mk \
+    $(LOCAL_DIR)/zest_arm64.mk \
+    $(LOCAL_DIR)/zest_x86.mk \
+    $(LOCAL_DIR)/zest_x86_64.mk

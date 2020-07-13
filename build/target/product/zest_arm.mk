@@ -13,8 +13,8 @@
 # limitations under the License.
 
 $(call inherit-product, build/target/product/aosp_arm.mk)
-include vendor/pa/build/target/product/pa_generic_target.mk
+include vendor/zest/build/target/product/zest_generic_target.mk
 
 TARGET_USES_64_BIT_BINDER := true
 
-PRODUCT_NAME := pa_arm
+PRODUCT_NAME := zest_arm

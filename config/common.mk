@@ -29,30 +29,30 @@ PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/pa/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/pa/prebuilt/bin/50-backuptool.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-backuptool.sh \
+    vendor/zest/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/zest/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/zest/prebuilt/bin/50-backuptool.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-backuptool.sh \
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/pa/prebuilt/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/pa/prebuilt/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
+    vendor/zest/prebuilt/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+    vendor/zest/prebuilt/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+    vendor/zest/prebuilt/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
 # Boot Animation
 ifneq ($(TARGET_BOOT_ANIMATION_RES),)
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/bootanimation/$(TARGET_BOOT_ANIMATION_RES).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
+    vendor/zest/prebuilt/bootanimation/$(TARGET_BOOT_ANIMATION_RES).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
 endif
 
 # Filesystem
-TARGET_FS_CONFIG_GEN += vendor/pa/config/config.fs
+TARGET_FS_CONFIG_GEN += vendor/zest/config/config.fs
 
 # Fonts
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/pa/prebuilt/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
-        vendor/pa/prebuilt/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+    $(call find-copy-subdir-files,*,vendor/zest/prebuilt/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+        vendor/zest/prebuilt/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
 # GApps
 ifneq ($(TARGET_DISABLES_GAPPS), true)
@@ -81,25 +81,25 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 
 # Overlays
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/pa/overlay/common
-DEVICE_PACKAGE_OVERLAYS += vendor/pa/overlay/common
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/zest/overlay/common
+DEVICE_PACKAGE_OVERLAYS += vendor/zest/overlay/common
 
 # Packages
-include vendor/pa/config/packages.mk
+include vendor/zest/config/packages.mk
 
 # PA version
-include vendor/pa/config/version.mk
+include vendor/zest/config/version.mk
 
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml \
-    vendor/pa/config/permissions/pa-default-permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/pa-default-permissions.xml \
-    vendor/pa/config/permissions/pa-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/pa-power-whitelist.xml \
-    vendor/pa/config/permissions/privapp-permissions-pa-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-pa.xml \
-    vendor/pa/config/permissions/privapp-permissions-pa-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-pa.xml \
-    vendor/pa/config/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
-    vendor/pa/config/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
+    vendor/zest/config/permissions/pa-default-permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/pa-default-permissions.xml \
+    vendor/zest/config/permissions/pa-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/pa-power-whitelist.xml \
+    vendor/zest/config/permissions/privapp-permissions-pa-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-pa.xml \
+    vendor/zest/config/permissions/privapp-permissions-pa-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-pa.xml \
+    vendor/zest/config/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
+    vendor/zest/config/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.control_privapp_permissions=enforce
@@ -138,23 +138,23 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 
 # QCOM
-include vendor/pa/config/qcom_utils.mk
+include vendor/zest/config/qcom_utils.mk
 # Include Common Qualcomm Device Tree on Qualcomm Boards
 $(call inherit-product-if-exists, device/qcom/common/common.mk)
 
 # Ramdisk
 # Copy all pa-specific init rc files
-$(foreach f,$(wildcard vendor/pa/prebuilt/etc/init/*.rc),\
+$(foreach f,$(wildcard vendor/zest/prebuilt/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # SECCOMP Extension
-BOARD_SECCOMP_POLICY += vendor/pa/seccomp
+BOARD_SECCOMP_POLICY += vendor/zest/seccomp
 
 PRODUCT_COPY_FILES += \
-    vendor/pa/seccomp/codec2.software.ext.policy:$(TARGET_COPY_OUT)/etc/seccomp_policy/codec2.software.ext.policy \
-    vendor/pa/seccomp/codec2.vendor.ext.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext.policy \
-    vendor/pa/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
-    vendor/pa/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+    vendor/zest/seccomp/codec2.software.ext.policy:$(TARGET_COPY_OUT)/etc/seccomp_policy/codec2.software.ext.policy \
+    vendor/zest/seccomp/codec2.vendor.ext.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext.policy \
+    vendor/zest/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    vendor/zest/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Skip boot jars check
 SKIP_BOOT_JARS_CHECK := true
@@ -169,7 +169,7 @@ sdclang_already_warned := true
 endif
 else
 # include definitions for SDCLANG
-include vendor/pa/sdclang/sdclang.mk
+include vendor/zest/sdclang/sdclang.mk
 endif
 
 # Sounds

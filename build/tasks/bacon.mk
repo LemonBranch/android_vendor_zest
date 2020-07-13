@@ -18,7 +18,7 @@
 # -----------------------------------------------------------------
 # PA OTA update package
 
-PA_TARGET_PACKAGE := $(PRODUCT_OUT)/pa-$(PA_VERSION).zip
+PA_TARGET_PACKAGE := $(PRODUCT_OUT)/zest-$(PA_VERSION).zip
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)

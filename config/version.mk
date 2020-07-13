@@ -27,14 +27,14 @@ ifndef PA_VERSION_FLAVOR
   # This is the global pa version flavor that determines the focal point
   # behind our releases. This is bundled alongside the $(PA_VERSION_CODE)
   # and only changes per major Android releases.
-  PA_VERSION_FLAVOR := Quartz
+  PA_VERSION_FLAVOR := Q
 endif
 
 ifndef PA_VERSION_CODE
   # The version code is the upgradable portion during the cycle of
   # every major Android release. Each version code upgrade indicates
   # our own major release during each lifecycle.
-  PA_VERSION_CODE := 4
+  PA_VERSION_CODE := 1
 endif
 
 # Determines the variant of the build.
@@ -72,10 +72,10 @@ endif
 
 # Paranoid Android System Version
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.pa.version=$(PA_VERSION)
+    ro.zest.version=$(PA_VERSION)
 
 # Paranoid Android Platform Display Version
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.pa.version.flavor=$(PA_VERSION_FLAVOR) \
-    ro.pa.version.code=$(PA_VERSION_CODE) \
-    ro.pa.build.variant=$(PA_BUILD_VARIANT)
+    ro.zest.version.flavor=$(PA_VERSION_FLAVOR) \
+    ro.zest.version.code=$(PA_VERSION_CODE) \
+    ro.zest.build.variant=$(PA_BUILD_VARIANT)

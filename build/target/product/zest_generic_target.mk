@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Paranoid Android
+# Copyright (C) 2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,19 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Check for target product
-ifeq (pa_hltechn,$(TARGET_PRODUCT))
+$(call inherit-product, vendor/zest/config/common_full_phone.mk)
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+PRODUCT_COPY_FILES += \
+    device/generic/goldfish/data/etc/permissions/privapp-permissions-goldfish.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-goldfish.xml \
 
-# Inherit Device Configuration
-$(call inherit-product, device/samsung/hltechn/full_hlte.mk)
-
-# Inherit common PA configuration
-$(call inherit-product, vendor/pa/config/common_full_phone.mk)
-
-PRODUCT_DEVICE := hltechn
-PRODUCT_NAME := pa_hltechn
-
-endif
+# Allow building otatools
+TARGET_FORCE_OTA_PACKAGE := true

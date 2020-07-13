@@ -1,4 +1,4 @@
-# Copyright (C) 2020 Paranoid Android
+# Copyright (C) 2018-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,19 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Check for target product
-ifeq (pa_hltetmo,$(TARGET_PRODUCT))
+$(call inherit-product, build/target/product/aosp_arm64.mk)
+include vendor/zest/build/target/product/zest_generic_target.mk
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
-# Inherit Device Configuration
-$(call inherit-product, device/samsung/hltetmo/full_hltetmo.mk)
-
-# Inherit common PA configuration
-$(call inherit-product, vendor/pa/config/common_full_phone.mk)
-
-PRODUCT_DEVICE := hltetmo
-PRODUCT_NAME := pa_hltetmo
-
-endif
+PRODUCT_NAME := zest_arm64
