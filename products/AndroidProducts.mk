@@ -1,4 +1,5 @@
-# Copyright (C) 2016-2020 Paranoid Android
+#
+# Copyright (C) 2020 Lemon Branch
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,10 +12,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+#
 
 # Product Makefiles
 PRODUCT_MAKEFILES += \
+    $(LOCAL_DIR)/judypn/zest_judypn.mk
 
 # Lunch targets
 COMMON_LUNCH_CHOICES += \
+    zest_judypn-userdebug
