@@ -24,6 +24,9 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     ThemePicker
 
+# Backup manager
+PRODUCT_PACKAGES += Seedvault
+
 # Bluetooth Audio (A2DP)
 PRODUCT_PACKAGES += libbthost_if
 
