@@ -99,6 +99,8 @@ PRODUCT_PACKAGES += \
 
 # Tools - FS
 PRODUCT_PACKAGES += \
+    check_f2fs \
+    f2fs_io \
     fsck.exfat \
     fsck.ntfs \
     mke2fs \
