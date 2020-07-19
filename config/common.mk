@@ -23,6 +23,10 @@ PRODUCT_PACKAGES += \
     adb_root
 endif
 
+# Android Beam
+PRODUCT_COPY_FILES += \
+    vendor/zest/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
+
 # ART
 # Optimize everything for preopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
@@ -39,6 +43,10 @@ PRODUCT_COPY_FILES += \
     vendor/zest/prebuilt/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
     vendor/zest/prebuilt/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
+
+# Bluetooth
+# Disable AAC whitelist
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.vendor.bt.a2dp.aac_whitelist=false
 
 # Boot Animation
 ifneq ($(TARGET_BOOT_ANIMATION_RES),)
