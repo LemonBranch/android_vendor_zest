@@ -42,10 +42,10 @@
         "revision":     "ten"
     },
     {
-        "remote":       "aospa",
+        "remote":       "lemonbranch",
         "repository":   "android_device_qcom_common",
         "target_path":  "device/qcom/common",
-        "revision":     "quartz"
+        "revision":     "ten"
     },
     {
         "remote":       "blobs",
