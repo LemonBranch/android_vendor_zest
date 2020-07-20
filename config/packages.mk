@@ -84,6 +84,13 @@ PRODUCT_PACKAGES += \
     pa-overlays \
     ParanoidOverlayStub
 
+# Power HAL
+ifneq ($(TARGET_PROVIDES_POWERHAL),true)
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.3-service.pixel-libperfmgr \
+    android.hardware.power.stats@1.0-service.pixel
+endif
+
 # QTI VNDK Framework Detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti \
