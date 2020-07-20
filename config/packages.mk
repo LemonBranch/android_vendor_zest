@@ -50,11 +50,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-rtti
 
-# Paranoid Packages
+# Lemon Branch Packages
 ifneq ($(TARGET_USES_AOSP_CAMERA),true)
-PRODUCT_PACKAGES += ParanoidCamera
+PRODUCT_PACKAGES += UltraCVM
 endif
 
+# Paranoid Packages
 PRODUCT_PACKAGES += \
     Longshot \
     ParanoidPapers \
