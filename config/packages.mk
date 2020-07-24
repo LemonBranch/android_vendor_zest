@@ -51,6 +51,9 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-rtti
 
 # Lemon Branch Packages
+PRODUCT_PACKAGES += \
+    Lawnchair
+
 ifneq ($(TARGET_USES_AOSP_CAMERA),true)
 PRODUCT_PACKAGES += UltraCVM
 endif
@@ -58,8 +61,7 @@ endif
 # Paranoid Packages
 PRODUCT_PACKAGES += \
     Longshot \
-    ParanoidPapers \
-    ParanoidQuickStep \
+    ParanoidPapers
 
 TARGET_ENABLE_FACE_SENSE := true
 PRODUCT_PACKAGES += \
