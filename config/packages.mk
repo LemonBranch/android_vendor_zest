@@ -61,11 +61,6 @@ PRODUCT_PACKAGES += \
     ParanoidPapers \
     ParanoidQuickStep \
 
-ifneq ($(filter RELEASE BETA,$(PA_BUILDTYPE)),)
-    PRODUCT_PACKAGES += \
-    ParanoidHub
-endif
-
 TARGET_ENABLE_FACE_SENSE := true
 PRODUCT_PACKAGES += \
     ParanoidFaceSense
