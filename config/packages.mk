@@ -67,12 +67,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.sense_service=$(TARGET_ENABLE_FACE_SENSE)
 
-ifeq ($(TARGET_DISABLES_GAPPS), true)
 PRODUCT_PACKAGES += \
     ChromeModernPublic \
     MarkupGoogle \
     MatchmakerPrebuilt
-endif
 
 # Paranoid Android Overlays
 PRODUCT_PACKAGES += \

@@ -62,25 +62,10 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/zest/prebuilt/fonts,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
         vendor/zest/prebuilt/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
-# GApps
-ifneq ($(TARGET_DISABLES_GAPPS), true)
-
-# Inherit GApps Makefiles
-$(call inherit-product-if-exists, vendor/partner_gms/products/gms.mk)
-$(call inherit-product-if-exists, vendor/partner_gms/products/turbo.mk)
-$(call inherit-product-if-exists, vendor/gapps/config.mk)
-
-# Do not preoptimize prebuilts when building GApps
-DONT_DEXPREOPT_PREBUILTS := true
-
-else
-
 # Use default filter for problematic AOSP apps
 PRODUCT_DEXPREOPT_QUICKEN_APPS += \
     Dialer \
     ChromeModernPublic
-
-endif #TARGET_DISABLES_GAPPS
 
 # Gestures
 ifneq ($(TARGET_USES_HARDWARE_KEYS),true)
