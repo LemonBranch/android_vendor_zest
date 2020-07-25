@@ -73,6 +73,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
 endif
 
+# Lemon Branch
+$(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
+
 # Overlays
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/zest/overlay/common
 DEVICE_PACKAGE_OVERLAYS += vendor/zest/overlay/common
