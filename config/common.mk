@@ -31,6 +31,17 @@ PRODUCT_COPY_FILES += \
 # Optimize everything for preopt
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 
+# Aurora Apps
+ifneq ($(TARGET_DISABLES_GAPPS), true)
+
+# Inherit Aurora Makefile
+$(call inherit-product-if-exists, vendor/Aurora/config/common.mk)
+
+# Do not preoptimize prebuilts when building Aurora apps
+DONT_DEXPREOPT_PREBUILTS := true
+
+endif #TARGET_DISABLES_GAPPS
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/zest/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \

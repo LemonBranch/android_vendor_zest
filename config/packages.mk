@@ -39,6 +39,15 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0.vendor \
     android.hidl.manager@1.0.vendor
 
+# microG
+ifneq ($(TARGET_DISABLES_GAPPS), true)
+PRODUCT_PACKAGES += \
+   AuroraDroid \
+   AuroraStore \
+   GmsCore \
+   GsfProxy
+endif #TARGET_DISABLES_GAPPS
+
 # Neural Network
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-rtti
