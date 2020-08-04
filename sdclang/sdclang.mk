@@ -1,4 +1,5 @@
-# Copyright (C) 2016-2019 Paranoid Android
+#
+# Copyright (c) 2016-2019 Paranoid Android
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,5 +12,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-SDCLANG_LTO_DEFS := vendor/pa/sdclang/sdllvm-lto-defs.mk
+SDCLANG_LTO_DEFS := vendor/zest/sdclang/sdllvm-lto-defs.mk

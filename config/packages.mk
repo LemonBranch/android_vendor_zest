@@ -1,4 +1,6 @@
-# Copyright (C) 2020 Paranoid Android
+#
+# Copyright (c) 2020 Paranoid Android
+# Copyright (c) 2020 Zest Projects Ltd.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,18 +13,26 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# Abstruct
-PRODUCT_PACKAGES += \
-    Abstruct
+#
 
 # AOSP Packages
 PRODUCT_PACKAGES += \
     ThemePicker
 
-# Charger Images
+# Aurora Apps
 PRODUCT_PACKAGES += \
-    charger_res_images
+   AuroraDroid \
+   AuroraServices \
+   AuroraStore
+
+# Backup Manager
+PRODUCT_PACKAGES += Seedvault
+
+# Cerberus Anti-theft
+PRODUCT_PACKAGES += Cerberus
+
+# Charger Images
+PRODUCT_PACKAGES += charger_res_images
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -31,26 +41,30 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0.vendor \
     android.hidl.manager@1.0.vendor
 
+# microG
+PRODUCT_PACKAGES += \
+   GmsCore \
+   GsfProxy
+
 # Neural Network
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-rtti
 
-# Paranoid Packages
+# Lemon Branch Packages
+PRODUCT_PACKAGES += \
+    Bromite \
+    BromiteSystemWebView \
+    Lawnchair
+
 ifneq ($(TARGET_USES_AOSP_CAMERA),true)
-PRODUCT_PACKAGES += ParanoidCamera
+PRODUCT_PACKAGES += GCam
 endif
 
+# Paranoid Packages
 PRODUCT_PACKAGES += \
     Longshot \
-    ParanoidPapers \
-    ParanoidQuickStep
+    ParanoidPapers
 
-ifneq ($(filter RELEASE BETA,$(PA_BUILDTYPE)),)
-    PRODUCT_PACKAGES += \
-    ParanoidHub
-endif
-
-# Face Sense
 TARGET_ENABLE_FACE_SENSE := true
 
 PRODUCT_PACKAGES += \
@@ -59,13 +73,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.sense_service=$(TARGET_ENABLE_FACE_SENSE)
 
-ifeq ($(TARGET_DISABLES_GAPPS), true)
 PRODUCT_PACKAGES += \
-    ChromeModernPublic \
     MarkupGoogle \
     MatchmakerPrebuilt \
     SnapdragonGallery
-endif
 
 # QTI VNDK Framework Detect
 PRODUCT_PACKAGES += \
@@ -74,10 +85,27 @@ PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor \
     libqti_vndfwk_detect.vendor
 
-# Retro Music Player
+# Tools - Filesystems
 PRODUCT_PACKAGES += \
-    RetroMusicPlayer
+    check_f2fs \
+    f2fs_io \
+    fsck.exfat \
+    fsck.ntfs \
+    mke2fs \
+    mkfs.exfat \
+    mkfs.ntfs \
+    mount.ntfs
 
-# Shell
+# Tools - OpenSSH
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+
+# Shell Packages
 PRODUCT_PACKAGES += \
     nano

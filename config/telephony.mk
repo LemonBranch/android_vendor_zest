@@ -1,7 +1,7 @@
 # APN List
-PRODUCT_COPY_FILES += vendor/pa/prebuilt/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
+PRODUCT_COPY_FILES += vendor/zest/prebuilt/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
 
-# HIDL Wrapper
+# HIDL
 PRODUCT_PACKAGES += \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml
@@ -11,7 +11,7 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml
 
-# MSIM manual provisioning
+# MSIM
 PRODUCT_PACKAGES += telephony-ext
 PRODUCT_BOOT_JARS += telephony-ext
 
@@ -19,14 +19,14 @@ PRODUCT_BOOT_JARS += telephony-ext
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.sys.fflag.override.settings_network_and_internet_v2=true
 
-# QTI Telephony Utils
+# QTI Telephony
 PRODUCT_PACKAGES += \
     qti-telephony-utils \
     qti_telephony_utils.xml
 
-# Sensitive Phone Numbers list
+# Sensitive Numbers List
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
+    vendor/zest/prebuilt/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
 # Sounds
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -36,12 +36,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PACKAGES += tcmiface
 PRODUCT_BOOT_JARS += tcmiface
 
-# Telephony packages
+# Telephony Packages
 PRODUCT_PACKAGES += \
     Stk \
     CellBroadcastReceiver
 
 # Tethering
-# Allow without requiring a provisioning app (for devices that check this)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     net.tethering.noprovisioning=true
