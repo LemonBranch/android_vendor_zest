@@ -65,6 +65,10 @@ PRODUCT_COPY_FILES += \
     vendor/zest/prebuilt/bootanimation/$(TARGET_BOOT_ANIMATION_RES).zip:$(TARGET_COPY_OUT_SYSTEM)/media/bootanimation.zip
 endif
 
+# Charger Images
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/zest/charger,$(TARGET_COPY_OUT_PRODUCT)/etc/res)
+
 # Filesystem
 TARGET_FS_CONFIG_GEN += vendor/zest/config/config.fs
 
@@ -88,8 +92,7 @@ endif
 $(call inherit-product-if-exists, vendor/lawnchair/lawnchair.mk)
 
 # Overlays
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/zest/overlay/common
-DEVICE_PACKAGE_OVERLAYS += vendor/zest/overlay/common
+include vendor/zest/overlay/overlays.mk
 
 # Packages
 include vendor/zest/config/packages.mk
@@ -115,7 +118,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Properties
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-BUILD_FINGERPRINT ?= google/coral/coral:10/QQ3A.200705.002/6506677:user/release-keys
+BUILD_FINGERPRINT ?= google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     keyguard.no_require_sim=true \
