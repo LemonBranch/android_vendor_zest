@@ -1,0 +1,92 @@
+[
+    {
+        "remote":       "lemonbranch",
+        "repository":   "android_device_lge_judypn",
+        "target_path":  "device/lge/judypn",
+        "revision":     "ten"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "android_device_lge_sdm845-common",
+        "target_path":  "device/lge/sdm845-common",
+        "revision":     "ten"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "android_device_lge_common",
+        "target_path":  "device/lge/common",
+        "revision":     "ten"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "android_kernel_lge_sdm845",
+        "target_path":  "kernel/lge/sdm845",
+        "revision":     "ten"
+    },
+    {
+        "remote":       "github",
+        "repository":   "arter97/exfat-linux",
+        "target_path":  "kernel/lge/sdm845/fs/exfat",
+        "revision":     "master"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "proprietary_vendor_lge",
+        "target_path":  "vendor/lge",
+        "revision":     "ten"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "android_hardware_lge",
+        "target_path":  "hardware/lge",
+        "revision":     "ten"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "android_device_qcom_common",
+        "target_path":  "device/qcom/common",
+        "revision":     "ten"
+    },
+    {
+        "remote":       "blobs",
+        "repository":   "proprietary_vendor_qcom_common",
+        "target_path":  "vendor/qcom/common",
+        "revision":     "quartz"
+    },
+    {
+        "remote":       "aospa",
+        "repository":   "android_hardware_qcom_audio",
+        "target_path":  "vendor/qcom/opensource/audio-hal/primary-hal",
+        "revision":     "quartz-845"
+    },
+    {
+        "remote":       "aospa",
+        "repository":   "android_hardware_qcom_bootctrl",
+        "target_path":  "hardware/qcom/bootctrl",
+        "revision":     "quartz-sony"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "android_hardware_qcom_display",
+        "target_path":  "hardware/qcom/display",
+        "revision":     "ten-sdm845"
+    },
+    {
+        "remote":       "aospa",
+        "repository":   "android_hardware_qcom_media",
+        "target_path":  "hardware/qcom/media",
+        "revision":     "quartz-845"
+    },
+    {
+        "remote":       "aospa",
+        "repository":   "android_vendor_qcom_opensource_commonsys-intf_display",
+        "target_path":  "vendor/qcom/opensource/commonsys-intf/display",
+        "revision":     "quartz"
+    },
+    {
+        "remote":       "aospa",
+        "repository":   "android_vendor_qcom-opensource_fm-commonsys",
+        "target_path":  "vendor/qcom/opensource/commonsys/fm",
+        "revision":     "quartz"
+    }
+]

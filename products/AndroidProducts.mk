@@ -16,6 +16,8 @@
 
 # Lunch Targets
 COMMON_LUNCH_CHOICES += \
+    zest_judypn-userdebug
 
 # Product Makefiles
 PRODUCT_MAKEFILES += \
+    $(LOCAL_DIR)/judypn/zest_judypn.mk
