@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
     AOSPASystemUIOverlay \
     AOSPATelephonyOverlay \
     AOSPAThemePickerOverlay \
+    FontComicSansOverlay \
     FontGoogleSansOverlay \
     FontInterOverlay \
     FontSlateForOnePlusOverlay \
