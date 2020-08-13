@@ -169,6 +169,7 @@ include vendor/zest/sdclang/sdclang.mk
 endif
 
 # Sounds
+include vendor/zest/prebuilt/audio/ParanoidAudio.mk
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.config.alarm_alert=Bright_morning.ogg \
     ro.config.notification_sound=End_note.ogg
