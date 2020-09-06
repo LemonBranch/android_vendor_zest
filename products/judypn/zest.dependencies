@@ -88,5 +88,29 @@
         "repository":   "android_vendor_qcom-opensource_fm-commonsys",
         "target_path":  "vendor/qcom/opensource/commonsys/fm",
         "revision":     "quartz"
-    }
+    },
+    {
+        "remote":       "caf",
+        "repository":   "platform/vendor/qcom-opensource/wlan/fw-api",
+        "target_path":  "kernel/lge/sdm845/drivers/staging/fw-api",
+        "revision":     "LA.UM.8.3.r1-08100-sdm845.0"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "qcacld-3.0",
+        "target_path":  "kernel/lge/sdm845/drivers/staging/qcacld-3.0",
+        "revision":     "LA.UM.8.3.r1-08100-sdm845.0"
+    },
+    {
+        "remote":       "lemonbranch",
+        "repository":   "qca-wifi-host-cmn",
+        "target_path":  "kernel/lge/sdm845/drivers/staging/qca-wifi-host-cmn",
+        "revision":     "LA.UM.8.3.r1-08100-sdm845.0"
+    },
+    {
+        "remote":       "github",
+        "repository":   "WireGuard/wireguard-linux-compat",
+        "target_path":  "kernel/lge/sdm845/net/wireguard",
+        "revision":     "master"
+    },
 ]
